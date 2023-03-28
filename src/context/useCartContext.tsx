@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { Pizza } from "../type/type";
+import React, {ReactNode, useContext} from 'react';
+import {Base, Dough, Pizza, Size, Topping} from "../type/type";
 
 
 interface ContextProps {
@@ -21,7 +21,31 @@ interface Props {
 }
 
 export function Provider({ children }: Props) {
-    const [products, setProducts] = React.useState<Pizza[]>([]);
+    const [products, setProducts] = React.useState<Pizza[]>([
+        {
+            id: 1,
+            dough: Dough.THICK,
+            size: Size.LARGE,
+            base: Base.TOMATO,
+            toppings: [
+                Topping.PINEAPPLE,
+                Topping.BACON,
+                Topping.CHICKEN,
+            ]
+
+        },
+        {
+            id: 2,
+            dough: Dough.THIN,
+            size: Size.SMALL,
+            base: Base.CREAM,
+            toppings: [
+                Topping.TOMATO,
+                Topping.CHEESE,
+                Topping.MUSHROOMS,
+            ]
+        }
+    ]);
     return <CartContext.Provider value={{
         products,
         addPizza: (pizza) => {
@@ -31,4 +55,9 @@ export function Provider({ children }: Props) {
             setProducts(products.filter((p) => p.id !== pizza.id));
         }
     }} > {children} </CartContext.Provider>;
+}
+Provider.displayName = 'CartProvider';
+
+export function useCartContext() {
+    return useContext(CartContext);
 }

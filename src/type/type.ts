@@ -31,4 +31,5 @@ export enum Topping {
     MUSHROOM = 'mushroom',
     OLIVES = 'olives',
     ONION = 'onion',
+    MUSHROOMS = 'mushrooms',
 }
