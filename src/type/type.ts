@@ -1,35 +1,35 @@
 export interface Pizza {
-    id: number,
-    dough: Dough,
-    size: Size,
-    base: Base,
-    toppings: Topping[],
+  id: number,
+  dough: Dough,
+  size: Size,
+  base: Base,
+  toppings: Topping[],
 }
 
 export enum Dough {
-    THIN = 'thin',
-    THICK = 'thick',
+  THIN = 'thin',
+  THICK = 'thick',
 }
 
 export enum Size {
-    SMALL = 'small',
-    MEDIUM = 'medium',
-    LARGE = 'large',
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
 }
 
 export enum Base {
-    TOMATO = 'tomato',
-    CREAM = 'cream',
+  TOMATO = 'tomato',
+  CREAM = 'cream',
 }
 
 export enum Topping {
-    CHEESE = 'cheese',
-    TOMATO = 'tomato',
-    PINEAPPLE = 'pineapple',
-    BACON = 'bacon',
-    CHICKEN = 'chicken',
-    MUSHROOM = 'mushroom',
-    OLIVES = 'olives',
-    ONION = 'onion',
-    MUSHROOMS = 'mushrooms',
+  CHEESE = 'cheese',
+  TOMATO = 'tomato',
+  PINEAPPLE = 'pineapple',
+  BACON = 'bacon',
+  CHICKEN = 'chicken',
+  MUSHROOM = 'mushroom',
+  OLIVES = 'olives',
+  ONION = 'onion',
+  MUSHROOMS = 'mushrooms',
 }
