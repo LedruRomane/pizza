@@ -12,7 +12,7 @@ export default function CartPage() {
     <ul>
       {products.map(pizza => <li key={pizza.id}><CartRow pizza={pizza} remove={removePizza} /></li>)}
     </ul>
-    <Link to={ConfigurePage.path}>Retour</Link>
+    <Link to={ConfigurePage.path}>Ajouter une nouvelle pizza</Link>
   </div>
 }
 

@@ -28,7 +28,6 @@ export enum Topping {
   PINEAPPLE = 'pineapple',
   BACON = 'bacon',
   CHICKEN = 'chicken',
-  MUSHROOM = 'mushroom',
   OLIVES = 'olives',
   ONION = 'onion',
   MUSHROOMS = 'mushrooms',
