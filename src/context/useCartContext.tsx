@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext } from 'react';
-import { Base, Dough, Pizza, Size, Topping } from "../type/type";
+import { Base, Dough, Pizza, Size, Topping } from "../models/type/type";
 import { idGenerator } from '../utils/Id';
 
 

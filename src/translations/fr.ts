@@ -1,4 +1,4 @@
-import { Base, Size } from "../type/type";
+import { Base, Size } from "../models/type/type";
 
 export default {
   base: {

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-alpha.123",
+    "clsx": "^1.2.1",
     "i18n-js": "^4.2.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

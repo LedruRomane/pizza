@@ -23,12 +23,15 @@ export enum Base {
 }
 
 export enum Topping {
-  CHEESE = 'cheese',
   TOMATO = 'tomato',
-  PINEAPPLE = 'pineapple',
-  BACON = 'bacon',
-  CHICKEN = 'chicken',
-  OLIVES = 'olives',
+  BASILICA = 'basilica',
   ONION = 'onion',
+  OLIVES = 'olives',
   MUSHROOMS = 'mushrooms',
+  BACON = 'bacon',
+  PEPPER = 'pepper',
+  PINEAPPLE = 'pineapple',
+  EGG = 'egg',
+  CHEESE = 'cheese',
+  CHORIZO = 'chorizo'
 }

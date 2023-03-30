@@ -1,5 +1,5 @@
 import { useCartContext } from "../context/useCartContext";
-import { Pizza } from "../type/type";
+import { Pizza } from "../models/type/type";
 import trans from "../translations";
 import { Link } from "react-router-dom";
 import ConfigurePage from "./ConfigurePage";
