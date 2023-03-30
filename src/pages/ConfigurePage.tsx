@@ -5,6 +5,7 @@ import { useCartContext } from '../context/useCartContext';
 import { Base, Dough, Size, Topping } from '../models/type/type';
 import { idGenerator } from '../utils/Id';
 import ToppingRow from '../components/ToppingRow';
+import RadioSelection from '../components/RadioSelection';
 
 
 ConfigurePage.path = '/'
@@ -12,9 +13,9 @@ export default function ConfigurePage() {
   const { addPizza } = useCartContext();
   const navigate = useNavigate();
   const [toppings, setToppings] = useState<Topping[]>([]);
-  const [dough, setDough] = useState<Dough>(Dough.THIN); //todo
-  const [size, setSize] = useState<Size>(Size.MEDIUM); //todo
-  const [base, setBase] = useState<Base | null>(null); //todo
+  const [dough, setDough] = useState<Dough>(Dough.THIN);
+  const [size, setSize] = useState<Size>(Size.MEDIUM);
+  const [base, setBase] = useState<Base | null>(null);
 
   function addTopping(topping: Topping): void {
     setToppings([...toppings, topping]);
@@ -34,17 +35,17 @@ export default function ConfigurePage() {
 
     addPizza({
       id: idGenerator(),
-      dough: Dough.THICK,
-      size: Size.LARGE,
-      base: Base.CREAM,
+      dough: dough,
+      size: size,
+      base: base,
       toppings: toppings
     });
     navigate(CartPage.path);
   }
 
   return <div>
-    <div id="topping">
-      <ul>
+    <div id="topping" className={"m-4"}>
+      <ul className={"grid grid-cols-3"}>
         {Object.values(Topping).map(topping => <li key={topping}>
           <ToppingRow
             isSelected={toppings.includes(topping)}
@@ -54,9 +55,36 @@ export default function ConfigurePage() {
         </li>)}
       </ul>
     </div>
-    <div id="size"></div>
-    <div id="dough"></div>
-    <div id="base"></div>
+    <div id="radioChoices" className={'grid grid-cols-3'}>
+      <div id="size">
+        {Object.values(Size).map(s =>
+            <RadioSelection
+              name={"size"}
+              value={s}
+              item={size}
+              setItem={setSize}
+            />)}
+      </div>
+      <div id="dough">
+        {Object.values(Dough).map(d =>
+          <RadioSelection
+            name={"dough"}
+            value={d}
+            item={dough}
+            setItem={setDough}
+          />)}
+      </div>
+      <div id="base">
+        {Object.values(Base).map(b =>
+            <RadioSelection
+              name={"base"}
+              value={b}
+              item={base}
+              setItem={setBase}
+            />)}
+      </div>
+    </div>
+
     <button onClick={addToCart}>Ajouter au panier</button>
     <Link to={CartPage.path}>Voir le panier</Link>
   </div>

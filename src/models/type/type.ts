@@ -2,7 +2,7 @@ export interface Pizza {
   id: number,
   dough: Dough,
   size: Size,
-  base: Base,
+  base: Base | null,
   toppings: Topping[],
 }
 

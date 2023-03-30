@@ -14,8 +14,8 @@ export default function ToppingRow({
   toggleTopping,
 }: ToppingRowProps) {
   return <>
-    <button className={clsx({
-      'topping--selected': isSelected,
+    <button className={clsx('m-2', {
+      'bg-blue-400 border-white': isSelected,
     })} onClick={() => toggleTopping(topping)}>{topping}</button>
   </>
 }
