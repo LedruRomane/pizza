@@ -8,6 +8,7 @@ import ToppingRow from '../components/ToppingRow';
 import RadioSelection from '../components/RadioSelection';
 import emptyBase from '../assets/images/empty.png';
 import { sortedToppings } from '../models/type/type';
+import assetsUrl from '../utils/assets';
 
 ConfigurePage.path = '/'
 export default function ConfigurePage() {
@@ -90,8 +91,9 @@ export default function ConfigurePage() {
       </div>
       <div id="preview" className={"m-4 relative w-[400px] h-[400px]"}>
         <img src={emptyBase} className={"w-full h-full absolute"}/>
+        {base && <img src={assetsUrl(`base/${base}.png`)} className={"w-full h-full absolute"} />}
         {sortedToppings.map(topping => toppings.includes(topping) &&
-          <img src={`src/assets/images/toppings/${topping}.svg`} className={"w-full h-full absolute"}/>
+          <img src={assetsUrl(`toppings/preview/${topping}.png`)} className={"w-full h-full absolute"}/>
           )}
       </div>
     </div>
