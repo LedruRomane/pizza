@@ -10,6 +10,5 @@ export default [
   {
     path: CartPage.path,
     element: <CartPage />,
-
-  }
+  },
 ];

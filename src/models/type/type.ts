@@ -35,3 +35,16 @@ export enum Topping {
   CHEESE = 'cheese',
   CHORIZO = 'chorizo'
 }
+
+export const sortedToppings = [
+  Topping.TOMATO,
+  Topping.ONION,
+  Topping.MUSHROOMS,
+  Topping.CHORIZO,
+  Topping.CHEESE,
+  Topping.PEPPER,
+  Topping.EGG,
+  Topping.BACON,
+  Topping.BASILICA,
+  Topping.OLIVES,
+]

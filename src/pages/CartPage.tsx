@@ -26,7 +26,7 @@ function CartRow({
   remove
 }: CartRowProps) {
   return <>
-    {/*todo: image */}
+    {/*todo: images */}
     <span>{generateLabel(pizza)}</span>
     <button>Modifier</button>
     <button onClick={() => remove(pizza)}>Supprimer</button>
