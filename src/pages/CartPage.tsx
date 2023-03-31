@@ -3,11 +3,17 @@ import { Pizza } from "../models/type/type";
 import trans from "../translations";
 import { Link } from "react-router-dom";
 import ConfigurePage from "./ConfigurePage";
+import { useEffect } from 'react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 CartPage.path = '/cart'
 export default function CartPage() {
 
   const { products, removePizza } = useCartContext();
+
+  // Hook custom avec un useEffect.
+  useDocumentTitle('Mon panier');
+
   return <div>
     <ul>
       {products.map(pizza => <li key={pizza.id}><CartRow pizza={pizza} remove={removePizza} /></li>)}

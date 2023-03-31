@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CartPage from "./CartPage";
 import { useCartContext } from '../context/useCartContext';
@@ -9,6 +9,7 @@ import RadioSelection from '../components/RadioSelection';
 import emptyBase from '../assets/images/empty.png';
 import { sortedToppings } from '../models/type/type';
 import assetsUrl from '../utils/assets';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 ConfigurePage.path = '/'
 export default function ConfigurePage() {
@@ -18,6 +19,9 @@ export default function ConfigurePage() {
   const [dough, setDough] = useState<Dough>(Dough.THIN);
   const [size, setSize] = useState<Size>(Size.MEDIUM);
   const [base, setBase] = useState<Base | null>(null);
+
+  // Hook custom avec un useEffect.
+  useDocumentTitle('Configurer ma pizza');
 
   function addTopping(topping: Topping): void {
     setToppings([...toppings, topping]);
