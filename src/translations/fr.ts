@@ -2,12 +2,12 @@ import { Base, Size } from "../models/type/type";
 
 export default {
   base: {
-    [Base.TOMATO]: 'tomate',
-    [Base.CREAM]: 'crème',
+    [Base.TOMATO]: 'Tomate',
+    [Base.CREAM]: 'Crème',
   },
   size: {
-    [Size.SMALL]: 'petite',
-    [Size.MEDIUM]: 'medium',
-    [Size.LARGE]: 'large',
+    [Size.SMALL]: 'Petite',
+    [Size.MEDIUM]: 'Medium',
+    [Size.LARGE]: 'Large',
   },
 }

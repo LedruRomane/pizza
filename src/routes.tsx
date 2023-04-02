@@ -1,6 +1,7 @@
 import ConfigurePage from "./pages/ConfigurePage";
 import CartPage from "./pages/CartPage";
 import React from "react";
+import ModifyPage from './pages/ModifyPage';
 
 export default [
   {
@@ -10,5 +11,9 @@ export default [
   {
     path: CartPage.path,
     element: <CartPage />,
+  },
+  {
+    path: ModifyPage.path,
+    element: <ModifyPage />,
   },
 ];

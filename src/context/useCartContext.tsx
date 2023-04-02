@@ -7,6 +7,7 @@ interface ContextProps {
   products: Pizza[];
   addPizza: (pizza: Pizza) => void;
   removePizza: (pizza: Pizza) => void;
+  modifyPizza: (pizza: Pizza) => void;
 }
 
 const CartContext = React.createContext<ContextProps>({
@@ -16,6 +17,8 @@ const CartContext = React.createContext<ContextProps>({
   },
   removePizza: () => {
   },
+    modifyPizza: () => {
+  },
 });
 
 interface Props {
@@ -24,7 +27,8 @@ interface Props {
 
 export function Provider({ children }: Props) {
   const [products, setProducts] = React.useState<Pizza[]>(() => {
-    console.log('init pizzaa state')
+    console.log('init pizza state');
+    // Retourne des données mockées.
     return [
       {
         id: idGenerator(),
@@ -32,11 +36,17 @@ export function Provider({ children }: Props) {
         size: Size.LARGE,
         base: Base.TOMATO,
         toppings: [
-          Topping.PINEAPPLE,
           Topping.BACON,
-          Topping.CHICKEN,
+          Topping.CHEESE,
+          Topping.MUSHROOMS,
+          Topping.ONION,
+          Topping.PEPPER,
+          Topping.EGG,
+          Topping.OLIVES,
+          Topping.BASILICA,
+          Topping.TOMATO,
+          Topping.CHORIZO,
         ]
-
       },
       {
         id: idGenerator(),
@@ -45,7 +55,7 @@ export function Provider({ children }: Props) {
         base: Base.CREAM,
         toppings: [
           Topping.TOMATO,
-          Topping.CHEESE,
+          Topping.CHORIZO,
           Topping.MUSHROOMS,
         ]
       }
@@ -59,7 +69,10 @@ export function Provider({ children }: Props) {
       },
       removePizza: (pizza) => {
         setProducts(products.filter((p) => p.id !== pizza.id));
-      }
+      },
+      modifyPizza: (pizza) => {
+        setProducts(products.map((p) => p.id === pizza.id ? pizza : p));
+      },
     }}
   > {children} </CartContext.Provider>;
 }
