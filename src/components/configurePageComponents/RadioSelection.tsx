@@ -1,22 +1,24 @@
 import React from 'react';
-import { Base, Dough, Size } from '../models/type/type';
+import { Base, Dough, Size } from '../../models/type/type';
 interface RadioSelectionProps {
+  id: string
   name: string
   value: string
   item: Dough | Size | Base | null
-  setItem: (item: never) => void //todo: mieux ?
+  setItem: (item: never) => void
 }
 export default function RadioSelection({
+  id,
   name,
   value,
   item,
   setItem
 }: RadioSelectionProps){
   const onOptionChange = (e : React.ChangeEvent<HTMLInputElement> ) => {
-    setItem(e.target.value as never); //todo: mieux ?
+    setItem(e.target.value as never);
   }
   return <>
-    <div id={name}>
+    <div id={id} className={'m-3'}>
       <input
         type={'radio'}
         id={value}

@@ -1,6 +1,7 @@
-import { Topping } from '../models/type/type';
-import React from 'react';
 import clsx from 'clsx';
+
+import { Topping } from '../../../models/type/type';
+import assetsUrl from '../../../utils/assets';
 
 interface ToppingRowProps {
   isSelected: Boolean
@@ -13,9 +14,11 @@ export default function ToppingRow({
   topping,
   toggleTopping,
 }: ToppingRowProps) {
-  return <>
-    <button className={clsx('m-2', {
+  return (
+  <>
+    <img src={assetsUrl(`toppings/${topping}.png`)} className={'w-full lg:w-1/2'}/>
+    <button className={clsx('m-2 self-stretch lg:self-auto', {
       'bg-blue-400 border-white': isSelected,
     })} onClick={() => toggleTopping(topping)}>{topping}</button>
-  </>
+  </>)
 }

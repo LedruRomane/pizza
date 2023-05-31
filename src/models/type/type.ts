@@ -7,8 +7,8 @@ export interface Pizza {
 }
 
 export enum Dough {
-  THIN = 'thin',
-  THICK = 'thick',
+  THIN = 'Mince',
+  THICK = 'Epaisse',
 }
 
 export enum Size {
@@ -30,7 +30,7 @@ export enum Topping {
   MUSHROOMS = 'mushrooms',
   BACON = 'bacon',
   PEPPER = 'pepper',
-  PINEAPPLE = 'pineapple',
+  // PINEAPPLE = 'pineapple', // 🍍
   EGG = 'egg',
   CHEESE = 'cheese',
   CHORIZO = 'chorizo'
