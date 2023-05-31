@@ -8,7 +8,7 @@ import routes from "./routes";
 
 init();
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, { basename: import.meta.env.VITE_URL_DEPLOY });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
